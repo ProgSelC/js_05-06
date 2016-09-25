@@ -76,13 +76,14 @@
                     var newInfoLine = document.createElement('li');
                     newInfoLine.innerHTML = 'Stop: ' + watch.getCurrentValue();
                     info.appendChild(newInfoLine);
+                    display.innerHTML = watch.getTotalValue();
                 } else {
                     watch.start();
                     button.className = 'btn btn-warning';
                     button.innerHTML = 'Stop';
                     refreshTimer = setInterval(function() {
                         display.innerHTML = watch.getTotalValue();
-                    }, 5);
+                    }, 1);
                 }
                 break;
             case 'split':
